@@ -15,15 +15,24 @@
 </head>
 <body>
 <div id="container">
+
+<div id="playStopContainer">
 <button id="play" class="nes-btn is-success" onclick="play()">PLAY</button>
 <button id="stop" class="nes-btn is-error" onclick="mute()">STOP</button>
 <button id="generate" class="nes-btn is-primary" onclick="makeMelody()"><i class="fa fa-random"></i></button>
+</div>
 
-<!--Wave Selection Button-->
+    <!--Wave Selection Button-->
+
+<div id="waveBtnContainer">
 <button id="sine" class="nes-btn is-primary" onclick="setWave(this.id)"><img id="sineImg" src="img/sine.png"></button>
 <button id="triangle"  class="nes-btn is-primary" onclick="setWave(this.id)"><img id="triangleImg" src="img/triangle.png"></button>
 <button id="sawtooth" class="nes-btn is-primary" onclick="setWave(this.id)"><img id="squareImg" src="img/sawtooth.png"></button>
 <button id="square" class="nes-btn is-primary" onclick="setWave(this.id)"><img id="sawtoothImg" src="img/square.png"></button>
+</div>
+<p id="rhythmIndicator"></p>
+<p id="currentNote"></p>
+
 </div>
     
 </body>

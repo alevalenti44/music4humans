@@ -1,14 +1,6 @@
-// c1 = 46;
-// d1 = 48;
-// e1 = 50;
-// f1 = 52;
-// g1 = 54;
-// a1 = 56;
-// b1 = 58;
 var attackLevel = 1.0;
 var releaseLevel = 10;
-
-var attackTime = 0.5
+var attackTime = 0.5;
 var decayTime = 0.5;
 var susPercent = 0.4;
 var releaseTime = 5;
@@ -44,9 +36,6 @@ var autoplay = false;
 var i = 0;
 function setup() {
   osc = new p5.Oscillator();
-    // env = new p5.Env();
-    // env.setADSR(attackTime, decayTime, susPercent, releaseTime);
-    // env.setRange(attackLevel, releaseLevel);
     osc.start();
 }
 
@@ -56,11 +45,16 @@ function draw() {
 
 
     if(rhythm[i] === true){
+        document.getElementById('rhythmIndicator').innerHTML = "True";
+
         osc.amp(1)
     }if(rhythm[i] === false){
-        osc.amp(0)
-    }
+          document.getElementById('rhythmIndicator').innerHTML = "False";
 
+          osc.amp(0)
+    }
+ 
+      //var freq = midiToFreq(scaleArr[riff[i]]);
       var freq = midiToFreq(scaleArr[riff[i]]);
 
       i++;
@@ -69,11 +63,11 @@ function draw() {
 
       //env.triggerRelease(0.1);
       frameRate(1);
-
+      document.getElementById('currentNote').innerHTML = scaleArr[riff[i]]
   } else {
       i = 0;
       console.log("out of notes");
-      osc.fade(0, 0.5);
+      osc.amp(0)
   }
 
 }
@@ -89,7 +83,10 @@ function mute() {
 }
 
 function play() {
-  draw()
+  draw();
+    if(!draw()){
+        osc.amp(1)
+    }
 }
 
 //sets wave type when button is clicked

@@ -1,11 +1,15 @@
-
+html{
+    background-color: #B7DCF4;
+}
 
 body{
+    background-color: #B7DCF4;
+
     overflow: hidden;
 }
 
 #container {
-    background-color: #baffc9;
+    background-color: #B7DCF4;
     width: 100vmax;
     height: 100vh;
 
@@ -51,4 +55,31 @@ body{
 #triangleImg{
     max-width:80%;
     max-height:80%;
+}
+
+#playStopContainer{
+    background-color: #B7DCF4;
+
+    margin: 20px 20px 20px 20px;
+}
+
+#waveBtnContainer{
+    margin: 20px 20px 20px 20px;
+}
+
+#currentNote{
+    color: white;
+    font-size: 500px;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#rhythmIndicator{
+    color: white;
+    position: relative;
+    float: right;
+    margin: -150px 50px 20px 20px;
 }
